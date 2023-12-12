@@ -32,7 +32,6 @@
     padding: 1vh 0;
     margin: 0;
 }
-
 .nav-bar ul {
     background-color: #008CBA;
     padding: 1vh 0;
@@ -174,6 +173,7 @@ h2 {
     font-weight: bold;
     color: #333;
     width:80%;
+    padding-top:50vh;
     margin: 5vh auto;
     padding: 2vh 2vw;
     background-color: #f9f9f9;
