@@ -2,105 +2,105 @@ let iccRankings = document.getElementById('icc-rankings');
 iccRankings.innerHTML = '<h1>ICC Rankings</h2>';
 
 
-// async function fetchBatsmenRankings() {
-//     const url = 'https://unofficial-cricbuzz.p.rapidapi.com/stats/get-icc-rankings?category=batsmen&formatType=test&isWomen=0';
-//     const options = {
-//         method: 'GET',
-//         headers: {
-//             'X-RapidAPI-Key': 'f187fbfa94msh0ed9a67ab0e000ap19013bjsn720364ede630',
-//             'X-RapidAPI-Host': 'unofficial-cricbuzz.p.rapidapi.com'
-//         }
-//     };
-//     try {
-//         const response = await fetch(url, options);
-//         const result = await response.json();
-//         console.log(result);
+async function fetchBatsmenRankings() {
+    const url = 'https://unofficial-cricbuzz.p.rapidapi.com/stats/get-icc-rankings?category=batsmen&formatType=test&isWomen=0';
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'f187fbfa94msh0ed9a67ab0e000ap19013bjsn720364ede630',
+            'X-RapidAPI-Host': 'unofficial-cricbuzz.p.rapidapi.com'
+        }
+    };
+    try {
+        const response = await fetch(url, options);
+        const result = await response.json();
+        console.log(result);
 
-//         displayTopBatsmenRankings(result);
-//     } catch (error) {
-//         console.error(error);
-//     }
-// }
+        displayTopBatsmenRankings(result);
+    } catch (error) {
+        console.error(error);
+    }
+}
 
 
-// function displayTopBatsmenRankings(data) {
-//     const rankingsElement = document.getElementById('batsmen-ranking');
-//     rankingsElement.innerHTML = '';
+function displayTopBatsmenRankings(data) {
+    const rankingsElement = document.getElementById('batsmen-ranking');
+    rankingsElement.innerHTML = '';
 
-//     data.rank.slice(0, 10).forEach(batsman => {
-//         const batsmanDiv = document.createElement('div');
-//         batsmanDiv.className = 'batsman-card';
-//         batsmanDiv.innerHTML = `
-//             <div class="batsman-name">${batsman.name} (${batsman.country})</div>
-//             <div class="batsman-details">
-//                 <span>Rank: ${batsman.rank}</span>
-//                 <span>Rating: ${batsman.rating}</span>
+    data.rank.slice(0, 10).forEach(batsman => {
+        const batsmanDiv = document.createElement('div');
+        batsmanDiv.className = 'batsman-card';
+        batsmanDiv.innerHTML = `
+            <div class="batsman-name">${batsman.name} (${batsman.country})</div>
+            <div class="batsman-details">
+                <span>Rank: ${batsman.rank}</span>
+                <span>Rating: ${batsman.rating}</span>
 
-//             </div>
-//         `;
-//         rankingsElement.appendChild(batsmanDiv);
-//     });
-//     let menRankings = document.getElementById('batsmen-ranking-conatiner');
+            </div>
+        `;
+        rankingsElement.appendChild(batsmanDiv);
+    });
+    let menRankings = document.getElementById('batsmen-ranking-conatiner');
 
-//     menRankings.style.display = 'block';
-//     let bowlerRankings = document.getElementById('bowler-ranking-conatiner');
+    menRankings.style.display = 'block';
+    let bowlerRankings = document.getElementById('bowler-ranking-conatiner');
 
-//     bowlerRankings.style.display = 'none';
-// }
-// var batsmenButton = document.getElementById('batsmen-ranking-button');
-// batsmenButton.addEventListener('click', fetchBatsmenRankings)
+    bowlerRankings.style.display = 'none';
+}
+var batsmenButton = document.getElementById('batsmen-ranking-button');
+batsmenButton.addEventListener('click', fetchBatsmenRankings)
 
-// async function fetchTopBowlerRankings() {
-//     const url = 'https://unofficial-cricbuzz.p.rapidapi.com/stats/get-icc-rankings?category=bowlers&formatType=test&isWomen=0';
-//     const options = {
-//         method: 'GET',
-//         headers: {
-//             'X-RapidAPI-Key': 'f187fbfa94msh0ed9a67ab0e000ap19013bjsn720364ede630',
-//             'X-RapidAPI-Host': 'unofficial-cricbuzz.p.rapidapi.com'
-//         }
-//     };
+async function fetchTopBowlerRankings() {
+    const url = 'https://unofficial-cricbuzz.p.rapidapi.com/stats/get-icc-rankings?category=bowlers&formatType=test&isWomen=0';
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'f187fbfa94msh0ed9a67ab0e000ap19013bjsn720364ede630',
+            'X-RapidAPI-Host': 'unofficial-cricbuzz.p.rapidapi.com'
+        }
+    };
 
-//     try {
-//         const response = await fetch(url, options);
-//         const result = await response.json();
-//         console.log(result);
+    try {
+        const response = await fetch(url, options);
+        const result = await response.json();
+        console.log(result);
 
-//         displayTopBowlerRankings(result);
-//     } catch (error) {
-//         console.error(error);
-//     }
-// }
+        displayTopBowlerRankings(result);
+    } catch (error) {
+        console.error(error);
+    }
+}
 
-// function displayTopBowlerRankings(data) {
-//     const rankingsElement = document.getElementById('bowler-ranking');
-//     rankingsElement.innerHTML = '';
+function displayTopBowlerRankings(data) {
+    const rankingsElement = document.getElementById('bowler-ranking');
+    rankingsElement.innerHTML = '';
 
-//     data.rank.slice(0, 10).forEach(bowler => {
-//         const bowlerDiv = document.createElement('div');
-//         bowlerDiv.className = 'bowler-card';
-//         bowlerDiv.innerHTML = `
-//             <div class="bowler-name">${bowler.name} (${bowler.country})</div>
-//             <div class="bowler-details">
-//                 <span>Rank: ${bowler.rank}</span>
-//                 <span>Rating: ${bowler.rating}</span>
+    data.rank.slice(0, 10).forEach(bowler => {
+        const bowlerDiv = document.createElement('div');
+        bowlerDiv.className = 'bowler-card';
+        bowlerDiv.innerHTML = `
+            <div class="bowler-name">${bowler.name} (${bowler.country})</div>
+            <div class="bowler-details">
+                <span>Rank: ${bowler.rank}</span>
+                <span>Rating: ${bowler.rating}</span>
 
-//             </div>
-//         `;
-//         rankingsElement.appendChild(bowlerDiv);
-//     });
-//     let bowlerRankings = document.getElementById('bowler-ranking-conatiner');
+            </div>
+        `;
+        rankingsElement.appendChild(bowlerDiv);
+    });
+    let bowlerRankings = document.getElementById('bowler-ranking-conatiner');
 
-//     bowlerRankings.style.display = 'block';
-//     let menRankings = document.getElementById('batsmen-ranking-conatiner');
+    bowlerRankings.style.display = 'block';
+    let menRankings = document.getElementById('batsmen-ranking-conatiner');
 
-//     menRankings.style.display = 'none';
-// }
-// var bowlerButton = document.getElementById('bowler-ranking-button');
-// bowlerButton.addEventListener('click', fetchTopBowlerRankings)
+    menRankings.style.display = 'none';
+}
+var bowlerButton = document.getElementById('bowler-ranking-button');
+bowlerButton.addEventListener('click', fetchTopBowlerRankings)
 
-// fetchBatsmenRankings();
-// document.getElementById('batsmen-ranking-container').style.display = 'none';
-// document.getElementById('bowler-ranking-container').style.display = 'none';
+fetchBatsmenRankings();
+document.getElementById('batsmen-ranking-container').style.display = 'none';
+document.getElementById('bowler-ranking-container').style.display = 'none';
 
 
 //  sponsor logo 

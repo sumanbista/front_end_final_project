@@ -222,6 +222,7 @@ h2 {
     padding: 2vh 2vh;
     margin-bottom: 2vh;
     background-color:white;
+
     gap: 2vh;
     transition: background-color 0.3s;
 }
