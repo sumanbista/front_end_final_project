@@ -150,7 +150,7 @@ function displayTopBowlerRankings(data) {
 var bowlerButton = document.getElementById('bowler-ranking-button');
 bowlerButton.addEventListener('click', fetchTopBowlerRankings)
 
-fetchBatsmenRankings();
+
 document.getElementById('batsmen-ranking-container').style.display = 'none';
 document.getElementById('bowler-ranking-container').style.display = 'none';
 
